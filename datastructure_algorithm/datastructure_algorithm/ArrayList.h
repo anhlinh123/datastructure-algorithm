@@ -21,7 +21,6 @@ public:
 	bool CheckContent(const T* array, size_t size) override;
 
 private:
-	char* m_string;
 	T* m_array;
 	size_t m_arraySize;
 	size_t m_listSize;
@@ -34,7 +33,6 @@ ArrayList<T>::ArrayList()
 	: m_array(nullptr)
 	, m_arraySize(0)
 	, m_listSize(0)
-	, m_string(nullptr)
 {
 }
 
@@ -43,7 +41,6 @@ ArrayList<T>::ArrayList(size_t size, T* arrayT)
 	: m_arraySize(0)
 	, m_array(nullptr)
 	, m_listSize(size)
-	, m_string(nullptr)
 {
 	Grow();
 	memcpy(m_array, arrayT, size * sizeof(T));

@@ -65,7 +65,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ArrayList.h" />
+    <ClInclude Include="ArrayQueue.h" />
+    <ClInclude Include="ArrayStack.h" />
     <ClInclude Include="IList.h" />
+    <ClInclude Include="IQueue.h" />
+    <ClInclude Include="IStack.h" />
     <ClInclude Include="LinkedList.h" />
   </ItemGroup>
   <ItemGroup>
