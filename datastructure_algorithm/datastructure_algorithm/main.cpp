@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "ArrayList.h"
+#include "LinkedList.h"
 
 int main()
 {

@@ -1,18 +1,18 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
-#include "ArrayList.h"
+#include "LinkedList.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UnitTest
 {
-	TEST_CLASS(ArrayListTest)
+	TEST_CLASS(LinkedListTest)
 	{
 	public:
 		TEST_METHOD(TestConstructor1)
 		{
 			int array[] = { 1, 2, 3 };
-			IList<int>* list = new ArrayList<int>(3, array);
+			IList<int>* list = new LinkedList<int>(3, array);
 			Assert::IsTrue(list->CheckContent(array, 3), L"failed", LINE_INFO());
 			delete list;
 		}
@@ -20,14 +20,14 @@ namespace UnitTest
 		TEST_METHOD(TestConstructor2)
 		{
 			int array[] = { 1 };
-			IList<int>* list = new ArrayList<int>(1, array);
+			IList<int>* list = new LinkedList<int>(1, array);
 			Assert::IsTrue(list->CheckContent(array, 1), L"failed", LINE_INFO());
 			delete list;
 		}
 
 		TEST_METHOD(TestConstructor3)
 		{
-			IList<int>* list = new ArrayList<int>(0, nullptr);
+			IList<int>* list = new LinkedList<int>(0, nullptr);
 			Assert::IsTrue(list->CheckContent(nullptr, 0), L"failed", LINE_INFO());
 			delete list;
 		}
@@ -36,7 +36,7 @@ namespace UnitTest
 		{
 			int array[] = { 1, 2, 3 };
 			int testArray[] = { 1, 2, 3, 4 };
-			IList<int>* list = new ArrayList<int>(3, array);
+			IList<int>* list = new LinkedList<int>(3, array);
 			list->Add(4);
 			Assert::IsTrue(list->CheckContent(testArray, 4), L"failed", LINE_INFO());
 			delete list;
@@ -46,7 +46,7 @@ namespace UnitTest
 		{
 			int array[] = { 1, 2, 3 };
 			int testArray[] = { 1, 2, 3, 4, 5 };
-			IList<int>* list = new ArrayList<int>(3, array);
+			IList<int>* list = new LinkedList<int>(3, array);
 			list->Add(4);
 			list->Add(5);
 			Assert::IsTrue(list->CheckContent(testArray, 5), L"failed", LINE_INFO());
@@ -56,7 +56,7 @@ namespace UnitTest
 		TEST_METHOD(TestAdd3)
 		{
 			int testArray[] = { 100 };
-			IList<int>* list = new ArrayList<int>();
+			IList<int>* list = new LinkedList<int>();
 			list->Add(100);
 			Assert::IsTrue(list->CheckContent(testArray, 1), L"failed", LINE_INFO());
 			delete list;
@@ -65,7 +65,7 @@ namespace UnitTest
 		TEST_METHOD(TestAdd4)
 		{
 			int testArray[] = { 100, 600, 5345, 3463461, 2424, 2315, 16773, 724, 135, 1737, 155, 3155, 146, 27456, 3156, 167547, 1346 };
-			IList<int>* list = new ArrayList<int>();
+			IList<int>* list = new LinkedList<int>();
 			list->Add(100);
 			list->Add(600);
 			list->Add(5345);
@@ -91,7 +91,7 @@ namespace UnitTest
 		TEST_METHOD(TestInsert1)
 		{
 			int testArray[] = { 100 };
-			IList<int>* list = new ArrayList<int>();
+			IList<int>* list = new LinkedList<int>();
 			list->Insert(100, 0);
 			Assert::IsTrue(list->CheckContent(testArray, 1), L"failed", LINE_INFO());
 			delete list;
@@ -101,7 +101,7 @@ namespace UnitTest
 		{
 			int array[] = { 100, 361, 614 };
 			int testArray[] = { 4214, 100, 361, 1636, 614 };
-			IList<int>* list = new ArrayList<int>(3, array);
+			IList<int>* list = new LinkedList<int>(3, array);
 			list->Insert(4214, 0);
 			list->Insert(1636, 3);
 			Assert::IsTrue(list->CheckContent(testArray, 5), L"failed", LINE_INFO());
@@ -112,7 +112,7 @@ namespace UnitTest
 		{
 			int array[] = { 100, 361, 614 };
 			int testArray[] = { 100, 614 };
-			IList<int>* list = new ArrayList<int>(3, array);
+			IList<int>* list = new LinkedList<int>(3, array);
 			list->Remove(1);
 			Assert::IsTrue(list->CheckContent(testArray, 2), L"failed", LINE_INFO());
 			delete list;
@@ -122,7 +122,7 @@ namespace UnitTest
 		{
 			int array[] = { 100 };
 			int testArray[] = { 1 };
-			IList<int>* list = new ArrayList<int>(1, array);
+			IList<int>* list = new LinkedList<int>(1, array);
 			list->Remove(0);
 			Assert::IsTrue(list->CheckContent(testArray, 0), L"failed", LINE_INFO());
 			delete list;
@@ -132,7 +132,7 @@ namespace UnitTest
 		{
 			int array[] = { 100, 231, 5341, 613461, 34125, 61363 };
 			int testArray[] = { 231, 5341, 61363 };
-			IList<int>* list = new ArrayList<int>(6, array);
+			IList<int>* list = new LinkedList<int>(6, array);
 			list->Remove(0);
 			list->Remove(3);
 			list->Remove(2);
